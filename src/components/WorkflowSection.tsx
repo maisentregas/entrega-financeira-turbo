@@ -12,31 +12,31 @@ export const WorkflowSection = () => {
   const workflowSteps = [
     {
       icon: Play,
-      title: "Corrida é gerada",
-      description: "Valores são lançados automaticamente",
+      title: "Corrida gerada",
+      description: "Valores lançados no extrato",
       color: "text-primary"
     },
     {
       icon: RefreshCcw,
-      title: "Extratos são atualizados",
+      title: "Extratos atualizados automaticamente",
       description: "Em tempo real para todos os envolvidos",
       color: "text-success"
     },
     {
       icon: CreditCard,
-      title: "Cobrança e pagamento",
+      title: "Cobrança ao cliente + pagamento ao entregador",
       description: "Ocorrem automaticamente",
       color: "text-warning"
     },
     {
       icon: BarChart3,
-      title: "Você acompanha tudo",
-      description: "Pelo extrato financeiro",
+      title: "Acompanhamento completo via extrato",
+      description: "Controle total do fluxo financeiro",
       color: "text-destructive"
     },
     {
       icon: Repeat,
-      title: "O ciclo se repete",
+      title: "Ciclo reinicia automaticamente",
       description: "De forma contínua",
       color: "text-primary"
     }

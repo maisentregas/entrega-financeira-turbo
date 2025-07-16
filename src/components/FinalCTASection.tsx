@@ -39,7 +39,7 @@ export const FinalCTASection = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-              Gestores de farmácia, autopeças, lojas, distribuidores ou restaurantes que têm frota própria já estão usando essa automação para sair do caos.
+              Se você tem uma empresa que faz entregas com frota própria — seja farmácia, restaurante, autopeças, distribuidora, varejista, transportadora, ou qualquer empresa que faz as suas próprias entregas — essa automação é pra você.
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8">
               Não perca mais tempo com planilhas e controles manuais. Automatize agora!
@@ -50,7 +50,7 @@ export const FinalCTASection = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-primary mb-2">
-                  Quero automatizar meu financeiro agora
+                  Quero automatizar o financeiro das minhas entregas agora
                 </h3>
                 <p className="text-muted-foreground">
                   Preencha os dados abaixo e descubra como transformar sua gestão
@@ -104,7 +104,7 @@ export const FinalCTASection = () => {
                 size="xl" 
                 className="w-full group"
               >
-                Quero automatizar meu financeiro agora
+                Quero automatizar o financeiro das minhas entregas agora
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
               

@@ -14,17 +14,17 @@ export const BenefitsSection = () => {
   const companyBenefits = [
     {
       icon: Clock,
-      title: "Mais tempo para focar na operação",
+      title: "Economia de tempo e recursos",
       description: "Elimine tarefas manuais e dedique-se ao que realmente importa"
     },
     {
       icon: TrendingDown,
-      title: "Redução de erros, retrabalho e brigas",
+      title: "Eliminação de erros e retrabalho",
       description: "Processos automatizados eliminam falhas humanas"
     },
     {
       icon: Eye,
-      title: "Previsibilidade de caixa e controle total",
+      title: "Controle total dos recebimentos e pagamentos",
       description: "Visibilidade completa do fluxo financeiro em tempo real"
     }
   ];
@@ -32,7 +32,7 @@ export const BenefitsSection = () => {
   const deliveryBenefits = [
     {
       icon: Zap,
-      title: "Pagamento ágil e confiável",
+      title: "Pagamento rápido e transparente",
       description: "Receba seus valores rapidamente e sem complicações"
     },
     {
@@ -42,7 +42,7 @@ export const BenefitsSection = () => {
     },
     {
       icon: CreditCard,
-      title: "Possibilidade de antecipar recebimentos",
+      title: "Antecipação de valores, se quiser",
       description: "Solicite antecipação quando precisar de dinheiro"
     }
   ];
@@ -52,7 +52,7 @@ export const BenefitsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Ganhos para quem gere e para quem entrega
+            Ganhos para quem faz os pedidos e para quem entrega
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Benefícios que transformam a experiência de todos os envolvidos

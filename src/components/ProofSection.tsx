@@ -8,10 +8,10 @@ export const ProofSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Transparência para todos
+            Tudo transparente e visível para todos os envolvidos
           </h2>
           <p className="text-lg text-primary/80 max-w-2xl mx-auto">
-            Veja como o entregador enxerga os valores no app — sem ruídos, sem erro
+            Print real do extrato de um entregador no app
           </p>
         </div>
         
@@ -61,7 +61,7 @@ export const ProofSection = () => {
             
             <div className="mt-8 p-6 bg-primary/10 rounded-lg border-l-4 border-primary">
               <p className="text-primary font-semibold italic">
-                "Sem dúvidas, sem ruído. Tudo transparente e visível para todos os envolvidos."
+                "Entregador acompanha tudo em tempo real. Sem dúvidas, sem ruído."
               </p>
             </div>
           </div>

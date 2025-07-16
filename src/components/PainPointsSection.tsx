@@ -11,22 +11,22 @@ export const PainPointsSection = () => {
   const painPoints = [
     {
       icon: FileSpreadsheet,
-      title: "Horas perdidas em planilhas manuais",
+      title: "Horas perdidas preenchendo planilhas",
       description: "Tempo precioso desperdiçado com controles manuais e cálculos repetitivos"
     },
     {
       icon: Clock,
-      title: "Clientes que demoram para pagar",
+      title: "Clientes que demoram para pagar e têm muitas dúvidas e questionamentos",
       description: "Cobranças demoradas e muitas dúvidas sobre valores e prazos"
     },
     {
       icon: Calculator,
-      title: "Erros de cálculo e discussões com entregadores",
+      title: "Erros de cálculo que geram discussões com entregadores",
       description: "Conflitos frequentes sobre valores, comissões e pagamentos"
     },
     {
       icon: CreditCard,
-      title: "Custos altos com PIX, boletos, NF",
+      title: "Custos altos com PIX, boletos e nota fiscal",
       description: "Taxas e burocracias que consomem sua margem de lucro"
     },
     {
@@ -41,7 +41,7 @@ export const PainPointsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-destructive mb-4">
-            Você enfrenta esses problemas na sua rotina?
+            Você enfrenta algum desses problemas?
           </h2>
           <p className="text-lg text-destructive/80 max-w-2xl mx-auto">
             Sabemos o quanto é frustrante lidar com esses desafios diariamente

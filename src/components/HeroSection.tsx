@@ -19,11 +19,11 @@ export const HeroSection = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground leading-tight">
-                Seu financeiro está parado no tempo?
+                Seu financeiro ainda está sendo feito de forma manual através de planilhas?
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-                Chega de planilhas, erros e prejuízos.<br />
-                A MaisEntregas automatiza o pagamento dos seus entregadores e a cobrança dos seus clientes — em tempo real.
+                Chega de erros, estresse e descontrole.<br />
+                Com a MaisEntregas, você automatiza os pagamentos dos seus entregadores e as cobranças dos seus clientes — com tecnologia em tempo real.
               </p>
             </div>
             

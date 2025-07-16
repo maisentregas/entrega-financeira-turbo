@@ -12,22 +12,22 @@ export const SolutionsSection = () => {
     {
       icon: RefreshCcw,
       title: "Lançamentos automáticos",
-      description: "Cada corrida lançada atualiza os extratos do cliente e do entregador automaticamente."
+      description: "Cada corrida atualiza os extratos do cliente e do entregador em tempo real."
     },
     {
       icon: Zap,
       title: "Pagamento automático",
-      description: "Você aprova com 1 clique e o entregador recebe na hora. Notificação no app incluída."
+      description: "Você aprova os pagamentos com 1 clique. O valor cai direto na conta do entregador."
     },
     {
       icon: CreditCard,
       title: "Cobrança automatizada",
-      description: "Pix e boletos gerados e enviados aos clientes, com controle de faturas e inadimplência."
+      description: "Boletos e pix são enviados aos clientes com controle de faturas e confirmação automática."
     },
     {
       icon: TrendingUp,
       title: "Pagamento antecipado",
-      description: "Entregadores podem solicitar antecipação direto no app."
+      description: "Entregadores podem solicitar antecipação direto no app — e isso pode se tornar uma nova fonte de receita para você."
     }
   ];
 
@@ -36,7 +36,7 @@ export const SolutionsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-success mb-4">
-            Automatize sua gestão financeira de ponta a ponta
+            Automatize a gestão financeira das suas entregas de ponta a ponta
           </h2>
           <p className="text-lg text-success/80 max-w-2xl mx-auto">
             Transforme sua operação com automação inteligente
