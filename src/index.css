@@ -17,8 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Primary brand colors - Professional blue/green for logistics */
+    --primary: 202 84% 24%;
     --primary-foreground: 210 40% 98%;
+    --primary-hover: 202 84% 18%;
+    --primary-light: 202 84% 90%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,15 +29,37 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 202 84% 24%;
+    --accent-foreground: 210 40% 98%;
 
+    /* Success color for solutions */
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+    --success-light: 142 71% 95%;
+
+    /* Warning color for pain points */
+    --warning: 38 92% 50%;
+    --warning-foreground: 222.2 84% 4.9%;
+    --warning-light: 38 92% 95%;
+
+    /* Destructive/problem color */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    --destructive-light: 0 84.2% 95%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 202 84% 24%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 71% 35%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-button: 0 4px 14px 0 hsl(var(--primary) / 0.25);
+    --shadow-hero: 0 20px 40px -10px hsl(var(--primary) / 0.3);
 
     --radius: 0.5rem;
 
