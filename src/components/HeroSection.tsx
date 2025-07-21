@@ -42,7 +42,7 @@ export const HeroSection = () => {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-6 pt-8">
               <Card className="p-4 bg-white/10 border-white/20 backdrop-blur-sm">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-9">
                   <Clock className="h-8 w-8 text-warning" />
                   <div>
                     <p className="text-2xl font-bold text-primary-foreground">80%</p>
