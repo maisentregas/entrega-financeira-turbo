@@ -2,15 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
-
 export const HeroSection = () => {
   const handleCTAClick = () => {
     const ctaSection = document.getElementById("final-cta");
-    ctaSection?.scrollIntoView({ behavior: "smooth" });
+    ctaSection?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-20 pb-32">
+  return <section className="relative overflow-hidden bg-gradient-hero pt-20 pb-32">
       <div className="absolute inset-0 bg-black/10"></div>
       
       <div className="relative container mx-auto px-4">
@@ -28,12 +27,7 @@ export const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="hero" 
-                size="xl" 
-                onClick={handleCTAClick}
-                className="group"
-              >
+              <Button variant="hero" size="xl" onClick={handleCTAClick} className="group">
                 Quero automatizar agora
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -45,7 +39,7 @@ export const HeroSection = () => {
                 <div className="flex items-center gap-9">
                   <Clock className="h-8 w-8 text-warning" />
                   <div>
-                    <p className="text-2xl font-bold text-primary-foreground">80%</p>
+                    <p className="text-2xl font-bold text-primary-foreground">90%</p>
                     <p className="text-sm text-primary-foreground/80">Redução de tempo</p>
                   </div>
                 </div>
@@ -66,14 +60,9 @@ export const HeroSection = () => {
           {/* Image */}
           <div className="relative animate-scale-in">
             <div className="absolute inset-0 bg-primary-light/20 rounded-2xl blur-3xl"></div>
-            <img 
-              src={heroDashboard} 
-              alt="Dashboard MaisEntregas" 
-              className="relative rounded-2xl shadow-hero w-full h-auto"
-            />
+            <img src={heroDashboard} alt="Dashboard MaisEntregas" className="relative rounded-2xl shadow-hero w-full h-auto" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
