@@ -4,19 +4,30 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Building2, Phone, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
 export const FinalCTASection = () => {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     whatsapp: ""
   });
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simulação de envio do formulário
+    // TODO: Implementar integração direta com Pipedrive API
+    // Estrutura de dados que será enviada:
+    // {
+    //   "name": formData.name,
+    //   "org_name": formData.company,
+    //   "phone": formData.whatsapp,
+    //   "custom_fields": {
+    //     "source": "LP ME - Financeiro automatizado"
+    //   }
+    // }
+
+    // Simulação de envio do formulário (será substituído pela integração real)
     toast({
       title: "Interesse registrado!",
       description: "Entraremos em contato em breve para mostrar como automatizar seu financeiro."
@@ -29,13 +40,16 @@ export const FinalCTASection = () => {
       whatsapp: ""
     });
   };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-  return <section id="final-cta" className="py-20 bg-gradient-hero">
+
+  return (
+    <section id="final-cta" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
@@ -61,17 +75,41 @@ export const FinalCTASection = () => {
               <div className="grid gap-4">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input type="text" name="name" placeholder="Seu nome completo" value={formData.name} onChange={handleInputChange} required className="pl-10 h-12" />
+                  <Input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Seu nome completo" 
+                    value={formData.name} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="pl-10 h-12" 
+                  />
                 </div>
                 
                 <div className="relative">
                   <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input type="text" name="company" placeholder="Nome da sua empresa" value={formData.company} onChange={handleInputChange} required className="pl-10 h-12" />
+                  <Input 
+                    type="text" 
+                    name="company" 
+                    placeholder="Nome da sua empresa" 
+                    value={formData.company} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="pl-10 h-12" 
+                  />
                 </div>
                 
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input type="tel" name="whatsapp" placeholder="WhatsApp (11) 99999-9999" value={formData.whatsapp} onChange={handleInputChange} required className="pl-10 h-12" />
+                  <Input 
+                    type="tel" 
+                    name="whatsapp" 
+                    placeholder="WhatsApp (11) 99999-9999" 
+                    value={formData.whatsapp} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="pl-10 h-12" 
+                  />
                 </div>
               </div>
               
@@ -102,5 +140,6 @@ export const FinalCTASection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
