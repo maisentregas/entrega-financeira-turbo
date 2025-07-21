@@ -47,7 +47,7 @@ export const HeroSection = () => {
                 <div className="flex items-center gap-3">
                   <TrendingUp className="h-8 w-8 text-success" />
                   <div>
-                    <p className="text-2xl font-bold text-primary-foreground">95%</p>
+                    <p className="text-2xl font-bold text-primary-foreground">99%</p>
                     <p className="text-sm text-primary-foreground/80">Menos erros</p>
                   </div>
                 </div>

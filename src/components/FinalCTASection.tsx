@@ -4,37 +4,38 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Building2, Phone, User } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 export const FinalCTASection = () => {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     whatsapp: ""
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simulação de envio do formulário
     toast({
       title: "Interesse registrado!",
       description: "Entraremos em contato em breve para mostrar como automatizar seu financeiro."
     });
-    
-    // Resetar formulário
-    setFormData({ name: "", company: "", whatsapp: "" });
-  };
 
+    // Resetar formulário
+    setFormData({
+      name: "",
+      company: "",
+      whatsapp: ""
+    });
+  };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
-
-  return (
-    <section id="final-cta" className="py-20 bg-gradient-hero">
+  return <section id="final-cta" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-12">
@@ -60,50 +61,21 @@ export const FinalCTASection = () => {
               <div className="grid gap-4">
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    name="name"
-                    placeholder="Seu nome completo"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="pl-10 h-12"
-                  />
+                  <Input type="text" name="name" placeholder="Seu nome completo" value={formData.name} onChange={handleInputChange} required className="pl-10 h-12" />
                 </div>
                 
                 <div className="relative">
                   <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    name="company"
-                    placeholder="Nome da sua empresa"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    required
-                    className="pl-10 h-12"
-                  />
+                  <Input type="text" name="company" placeholder="Nome da sua empresa" value={formData.company} onChange={handleInputChange} required className="pl-10 h-12" />
                 </div>
                 
                 <div className="relative">
                   <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input
-                    type="tel"
-                    name="whatsapp"
-                    placeholder="WhatsApp (11) 99999-9999"
-                    value={formData.whatsapp}
-                    onChange={handleInputChange}
-                    required
-                    className="pl-10 h-12"
-                  />
+                  <Input type="tel" name="whatsapp" placeholder="WhatsApp (11) 99999-9999" value={formData.whatsapp} onChange={handleInputChange} required className="pl-10 h-12" />
                 </div>
               </div>
               
-              <Button 
-                type="submit" 
-                variant="cta" 
-                size="xl" 
-                className="w-full group"
-              >
+              <Button type="submit" variant="cta" size="xl" className="w-full group">
                 Quero automatizar o financeiro das minhas entregas agora
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -116,20 +88,19 @@ export const FinalCTASection = () => {
           
           <div className="mt-12 grid md:grid-cols-3 gap-6 text-center">
             <div className="text-primary-foreground">
-              <div className="text-3xl font-bold mb-2">+500</div>
+              <div className="text-3xl font-bold mb-2">+300</div>
               <div className="text-sm opacity-90">Empresas atendidas</div>
             </div>
             <div className="text-primary-foreground">
-              <div className="text-3xl font-bold mb-2">80%</div>
+              <div className="text-3xl font-bold mb-2">90%</div>
               <div className="text-sm opacity-90">Redução de tempo</div>
             </div>
             <div className="text-primary-foreground">
-              <div className="text-3xl font-bold mb-2">24/7</div>
-              <div className="text-sm opacity-90">Suporte disponível</div>
+              <div className="text-3xl font-bold mb-2">99%</div>
+              <div className="text-sm opacity-90">Redução de erros e fraudes</div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
