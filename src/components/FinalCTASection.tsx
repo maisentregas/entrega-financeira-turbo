@@ -22,13 +22,6 @@ export const FinalCTASection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Verificar se Pipedrive está configurado
-    if (!isConfigured) {
-      setShowPipedriveConfig(true);
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
@@ -147,24 +140,13 @@ export const FinalCTASection = () => {
                   </>
                 ) : (
                   <>
-                    Quero automatizar o financeiro das minhas entregas agora
+                    <span className="hidden sm:inline">Quero automatizar o financeiro das minhas entregas agora</span>
+                    <span className="sm:hidden">Quero automatizar agora</span>
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </>
                 )}
               </Button>
               
-              {!isConfigured && (
-                <Button 
-                  type="button" 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full mt-2" 
-                  onClick={() => setShowPipedriveConfig(true)}
-                >
-                  <Settings className="mr-2 h-4 w-4" />
-                  Configurar Pipedrive
-                </Button>
-              )}
               
               <p className="text-xs text-muted-foreground text-center">
                 Ao enviar, você concorda em receber contato da nossa equipe para apresentar a solução.
