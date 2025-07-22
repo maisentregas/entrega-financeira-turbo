@@ -1,7 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp } from "lucide-react";
 import heroDashboard from "@/assets/hero-dashboard.jpg";
+import maisentregasLogo from "@/assets/maisentregas-logo.png";
+
 export const HeroSection = () => {
   const handleCTAClick = () => {
     const ctaSection = document.getElementById("final-cta");
@@ -9,10 +12,21 @@ export const HeroSection = () => {
       behavior: "smooth"
     });
   };
-  return <section className="relative overflow-hidden bg-gradient-hero pt-20 pb-32">
+  
+  return (
+    <section className="relative overflow-hidden bg-gradient-hero pt-20 pb-32">
       <div className="absolute inset-0 bg-black/10"></div>
       
       <div className="relative container mx-auto px-4">
+        {/* Logo da MaisEntregas */}
+        <div className="flex justify-center mb-8 animate-fade-in">
+          <img 
+            src={maisentregasLogo} 
+            alt="MaisEntregas.com" 
+            className="h-16 md:h-20 w-auto filter brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+          />
+        </div>
+        
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8 animate-fade-in">
@@ -62,5 +76,6 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
