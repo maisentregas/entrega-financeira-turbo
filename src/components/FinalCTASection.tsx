@@ -22,6 +22,13 @@ export const FinalCTASection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Se Pipedrive não estiver configurado, mostrar modal de configuração
+    if (!isConfigured) {
+      setShowPipedriveConfig(true);
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {
@@ -147,6 +154,19 @@ export const FinalCTASection = () => {
                 )}
               </Button>
               
+              
+              <div className="text-center mt-4">
+                <Button 
+                  type="button" 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={() => setShowPipedriveConfig(true)}
+                  className="text-xs text-muted-foreground hover:text-foreground"
+                >
+                  <Settings className="mr-2 h-3 w-3" />
+                  Configurar integração Pipedrive
+                </Button>
+              </div>
               
               <p className="text-xs text-muted-foreground text-center">
                 Ao enviar, você concorda em receber contato da nossa equipe para apresentar a solução.
