@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Building2, Phone, User } from "lucide-react";
+import { ArrowRight, Building2, Phone, User, Settings, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { usePipedrive } from "@/hooks/usePipedrive";
+import { PipedriveConfig } from "@/components/PipedriveConfig";
+import { pipedriveService } from "@/services/pipedrive";
 
 export const FinalCTASection = () => {
   const [formData, setFormData] = useState({
@@ -11,34 +14,51 @@ export const FinalCTASection = () => {
     company: "",
     whatsapp: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPipedriveConfig, setShowPipedriveConfig] = useState(false);
+  
   const { toast } = useToast();
+  const { isConfigured } = usePipedrive();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // TODO: Implementar integração direta com Pipedrive API
-    // Estrutura de dados que será enviada:
-    // {
-    //   "name": formData.name,
-    //   "org_name": formData.company,
-    //   "phone": formData.whatsapp,
-    //   "custom_fields": {
-    //     "source": "LP ME - Financeiro automatizado"
-    //   }
-    // }
+    // Verificar se Pipedrive está configurado
+    if (!isConfigured) {
+      setShowPipedriveConfig(true);
+      return;
+    }
 
-    // Simulação de envio do formulário (será substituído pela integração real)
-    toast({
-      title: "Interesse registrado!",
-      description: "Entraremos em contato em breve para mostrar como automatizar seu financeiro."
-    });
+    setIsSubmitting(true);
 
-    // Resetar formulário
-    setFormData({
-      name: "",
-      company: "",
-      whatsapp: ""
-    });
+    try {
+      const result = await pipedriveService.submitLead(formData);
+      
+      if (result.success) {
+        toast({
+          title: "Lead enviado com sucesso!",
+          description: "Seu interesse foi registrado no Pipedrive. Entraremos em contato em breve."
+        });
+
+        // Resetar formulário
+        setFormData({
+          name: "",
+          company: "",
+          whatsapp: ""
+        });
+      } else {
+        throw new Error(result.error || 'Erro desconhecido');
+      }
+    } catch (error) {
+      console.error('Erro ao enviar lead:', error);
+      toast({
+        title: "Erro ao enviar dados",
+        description: "Não foi possível enviar para o Pipedrive. Tente novamente ou entre em contato conosco.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -113,10 +133,38 @@ export const FinalCTASection = () => {
                 </div>
               </div>
               
-              <Button type="submit" variant="cta" size="xl" className="w-full group">
-                Quero automatizar o financeiro das minhas entregas agora
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              <Button 
+                type="submit" 
+                variant="cta" 
+                size="xl" 
+                className="w-full group" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    Quero automatizar o financeiro das minhas entregas agora
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </>
+                )}
               </Button>
+              
+              {!isConfigured && (
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full mt-2" 
+                  onClick={() => setShowPipedriveConfig(true)}
+                >
+                  <Settings className="mr-2 h-4 w-4" />
+                  Configurar Pipedrive
+                </Button>
+              )}
               
               <p className="text-xs text-muted-foreground text-center">
                 Ao enviar, você concorda em receber contato da nossa equipe para apresentar a solução.
@@ -140,6 +188,11 @@ export const FinalCTASection = () => {
           </div>
         </div>
       </div>
+      
+      <PipedriveConfig 
+        open={showPipedriveConfig} 
+        onOpenChange={setShowPipedriveConfig} 
+      />
     </section>
   );
 };
