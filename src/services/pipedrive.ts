@@ -1,9 +1,11 @@
 import { 
   PipedriveConfig, 
   PipedrivePersonData, 
+  PipedriveOrganizationData,
   PipedriveDealData, 
   PipedriveResponse, 
   PipedrivePerson, 
+  PipedriveOrganization,
   PipedriveDeal,
   PipedriveError,
   LeadFormData 
@@ -53,6 +55,31 @@ class PipedriveService {
         success: false, 
         error: 'Erro de conexão. Verifique sua internet e tente novamente.' 
       };
+    }
+  }
+
+  async createOrganization(orgData: PipedriveOrganizationData): Promise<PipedriveOrganization> {
+    try {
+      const response = await fetch(this.getApiUrl('organizations'), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(orgData),
+      });
+
+      const data: PipedriveResponse<PipedriveOrganization> | PipedriveError = await response.json();
+
+      if (!response.ok || !data.success) {
+        const error = data as PipedriveError;
+        throw new Error(error.error || 'Erro ao criar organização no Pipedrive');
+      }
+
+      const successData = data as PipedriveResponse<PipedriveOrganization>;
+      return successData.data;
+    } catch (error) {
+      console.error('Erro ao criar organização:', error);
+      throw error;
     }
   }
 
@@ -108,20 +135,30 @@ class PipedriveService {
 
   async submitLead(formData: LeadFormData): Promise<{ success: boolean; error?: string }> {
     try {
-      // 1. Criar pessoa
+      // 1. Criar organização primeiro
+      let orgId: number | undefined;
+      if (formData.company) {
+        const orgData: PipedriveOrganizationData = {
+          name: formData.company,
+        };
+        const organization = await this.createOrganization(orgData);
+        orgId = organization.id;
+      }
+
+      // 2. Criar pessoa
       const personData: PipedrivePersonData = {
         name: formData.name,
-        org_name: formData.company,
-        phone: formData.whatsapp ? [formData.whatsapp] : undefined,
+        org_id: orgId,
+        phone: formData.whatsapp ? [{ value: formData.whatsapp, primary: true }] : undefined,
       };
 
       const person = await this.createPerson(personData);
 
-      // 2. Criar negócio/lead
+      // 3. Criar negócio/lead
       const dealData: PipedriveDealData = {
         title: `Lead: ${formData.name} - ${formData.company}`,
         person_id: person.id,
-        org_id: person.org_id,
+        org_id: orgId,
         custom_fields: {
           source: 'LP ME - Financeiro automatizado'
         }

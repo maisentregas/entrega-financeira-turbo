@@ -5,9 +5,18 @@ export interface PipedriveConfig {
 
 export interface PipedrivePersonData {
   name: string;
-  org_name?: string;
-  phone?: string[];
-  email?: string[];
+  org_id?: number;
+  phone?: Array<{ value: string; primary?: boolean }>;
+  email?: Array<{ value: string; primary?: boolean }>;
+}
+
+export interface PipedriveOrganizationData {
+  name: string;
+}
+
+export interface PipedriveOrganization {
+  id: number;
+  name: string;
 }
 
 export interface PipedriveDealData {
