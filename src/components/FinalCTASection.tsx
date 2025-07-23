@@ -2,10 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Building2, Phone, User, Settings, Loader2 } from "lucide-react";
+import { ArrowRight, Building2, Phone, User, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { usePipedrive } from "@/hooks/usePipedrive";
-import { PipedriveConfig } from "@/components/PipedriveConfig";
 import { pipedriveService } from "@/services/pipedrive";
 
 export const FinalCTASection = () => {
@@ -15,20 +13,11 @@ export const FinalCTASection = () => {
     whatsapp: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showPipedriveConfig, setShowPipedriveConfig] = useState(false);
   
   const { toast } = useToast();
-  const { isConfigured } = usePipedrive();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Se Pipedrive não estiver configurado, mostrar modal de configuração
-    if (!isConfigured) {
-      setShowPipedriveConfig(true);
-      return;
-    }
-    
     setIsSubmitting(true);
 
     try {
@@ -36,10 +25,10 @@ export const FinalCTASection = () => {
       
       if (result.success) {
         toast({
-          title: "Lead enviado com sucesso!",
-          description: "Seu interesse foi registrado no Pipedrive. Entraremos em contato em breve."
+          title: "Sucesso!",
+          description: "Suas informações foram enviadas com sucesso. Nossa equipe entrará em contato em breve.",
         });
-
+        
         // Resetar formulário
         setFormData({
           name: "",
@@ -47,14 +36,17 @@ export const FinalCTASection = () => {
           whatsapp: ""
         });
       } else {
-        throw new Error(result.error || 'Erro desconhecido');
+        toast({
+          title: "Erro ao enviar dados",
+          description: result.error || "Tente novamente em alguns minutos.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
-      console.error('Erro ao enviar lead:', error);
       toast({
-        title: "Erro ao enviar dados",
-        description: "Não foi possível enviar para o Pipedrive. Tente novamente ou entre em contato conosco.",
-        variant: "destructive"
+        title: "Erro inesperado",
+        description: "Ocorreu um erro inesperado. Tente novamente.",
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -154,20 +146,6 @@ export const FinalCTASection = () => {
                 )}
               </Button>
               
-              
-              <div className="text-center mt-4">
-                <Button 
-                  type="button" 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={() => setShowPipedriveConfig(true)}
-                  className="text-xs text-muted-foreground hover:text-foreground"
-                >
-                  <Settings className="mr-2 h-3 w-3" />
-                  Configurar integração Pipedrive
-                </Button>
-              </div>
-              
               <p className="text-xs text-muted-foreground text-center">
                 Ao enviar, você concorda em receber contato da nossa equipe para apresentar a solução.
               </p>
@@ -190,11 +168,6 @@ export const FinalCTASection = () => {
           </div>
         </div>
       </div>
-      
-      <PipedriveConfig 
-        open={showPipedriveConfig} 
-        onOpenChange={setShowPipedriveConfig} 
-      />
     </section>
   );
 };

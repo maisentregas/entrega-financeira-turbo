@@ -10,32 +10,17 @@ import {
 } from '@/types/pipedrive';
 
 class PipedriveService {
-  private config: PipedriveConfig | null = null;
+  private config: PipedriveConfig = {
+    companyDomain: 'maisentregascom',
+    apiToken: 'af4eb45706d5113802d37ff7e6cec7d159d679fb'
+  };
 
-  setConfig(config: PipedriveConfig) {
-    this.config = config;
-    localStorage.setItem('pipedrive_config', JSON.stringify(config));
-  }
-
-  getConfig(): PipedriveConfig | null {
-    if (this.config) return this.config;
-    
-    const saved = localStorage.getItem('pipedrive_config');
-    if (saved) {
-      this.config = JSON.parse(saved);
-      return this.config;
-    }
-    
-    return null;
-  }
-
-  clearConfig() {
-    this.config = null;
-    localStorage.removeItem('pipedrive_config');
+  getConfig(): PipedriveConfig {
+    return this.config;
   }
 
   isConfigured(): boolean {
-    return !!this.getConfig();
+    return true;
   }
 
   private getApiUrl(endpoint: string): string {
