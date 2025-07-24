@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Building2, Phone, User, Loader2 } from "lucide-react";
+import { ArrowRight, Building2, Phone, User, Mail, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { pipedriveService } from "@/services/pipedrive";
+import { rdstationService } from "@/services/rdstation";
 
 export const FinalCTASection = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     company: "",
     whatsapp: ""
   });
@@ -21,7 +22,7 @@ export const FinalCTASection = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await pipedriveService.submitLead(formData);
+      const result = await rdstationService.submitLead(formData);
       
       if (result.success) {
         toast({
@@ -32,6 +33,7 @@ export const FinalCTASection = () => {
         // Resetar formulário
         setFormData({
           name: "",
+          email: "",
           company: "",
           whatsapp: ""
         });
@@ -92,6 +94,19 @@ export const FinalCTASection = () => {
                     name="name" 
                     placeholder="Seu nome completo" 
                     value={formData.name} 
+                    onChange={handleInputChange} 
+                    required 
+                    className="pl-10 h-12" 
+                  />
+                </div>
+                
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                  <Input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Seu melhor e-mail" 
+                    value={formData.email} 
                     onChange={handleInputChange} 
                     required 
                     className="pl-10 h-12" 
