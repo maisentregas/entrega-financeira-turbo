@@ -101,7 +101,7 @@ export const PharmaHeroSection = () => {
               <img 
                 src={pharmaAppMockup} 
                 alt="App de gestão de entregas farmacêuticas" 
-                className="w-full max-w-md mx-auto rounded-2xl shadow-hero"
+                className="w-full max-w-lg mx-auto rounded-2xl shadow-hero"
               />
             </div>
             {/* Decorative gradient overlay */}
