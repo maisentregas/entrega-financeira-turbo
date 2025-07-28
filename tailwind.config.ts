@@ -65,6 +65,14 @@ export default {
 					foreground: 'hsl(var(--warning-foreground))',
 					light: 'hsl(var(--warning-light))'
 				},
+				pharma: {
+					green: 'hsl(var(--pharma-green))',
+					'green-light': 'hsl(var(--pharma-green-light))',
+					'green-dark': 'hsl(var(--pharma-green-dark))',
+					black: 'hsl(var(--pharma-black))',
+					'gray-light': 'hsl(var(--pharma-gray-light))',
+					white: 'hsl(var(--pharma-white))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
