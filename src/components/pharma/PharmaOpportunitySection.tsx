@@ -1,7 +1,7 @@
 import React from "react";
 import { TrendingUp, Target, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import deliveryTrackingImage from "@/assets/delivery-tracking.jpg";
+import pharmacyTrackingImage from "@/assets/pharmacy-management-tracking.jpg";
 
 export const PharmaOpportunitySection = () => {
   return (
@@ -79,8 +79,8 @@ export const PharmaOpportunitySection = () => {
         <div className="lg:order-first">
           <div className="relative">
             <img 
-              src={deliveryTrackingImage} 
-              alt="Profissional acompanhando entregas em tempo real" 
+              src={pharmacyTrackingImage} 
+              alt="Gestora de farmácia acompanhando entregas em tempo real" 
               className="w-full rounded-2xl shadow-card object-cover aspect-square"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-pharma-green/20 to-transparent rounded-2xl"></div>
