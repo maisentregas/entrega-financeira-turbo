@@ -1,7 +1,7 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Instagram } from "lucide-react";
-import maisentregasLogo from "@/assets/maisentregas-gradient-logo.png";
+import maisentregasLogo from "@/assets/maisentregas-logo.png";
 
 export const PharmaFooter = () => {
   return (
@@ -15,7 +15,7 @@ export const PharmaFooter = () => {
               <img 
                 src={maisentregasLogo} 
                 alt="MaisEntregas" 
-                className="h-12"
+                className="h-12 bg-white p-2 rounded"
               />
               <p className="text-white/80 text-sm leading-relaxed max-w-md">
                 Plataforma completa de gestão de entregas para farmácias. 

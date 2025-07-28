@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp, MapPin } from "lucide-react";
 import pharmaAppMockup from "@/assets/pharma-app-mockup.jpg";
-import maisentregasLogo from "@/assets/maisentregas-gradient-logo.png";
+import maisentregasLogo from "@/assets/maisentregas-logo.png";
 
 export const PharmaHeroSection = () => {
   const handleCTAClick = () => {
