@@ -2,8 +2,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp, MapPin } from "lucide-react";
-import pharmaAppMockup from "@/assets/pharma-app-mockup.jpg";
-import maisentregasLogo from "@/assets/maisentregas-gradient-logo.png";
+import pharmaManagerImage from "@/assets/pharmacy-manager.jpg";
+import maisentregasLogo from "@/assets/maisentregas-logo-improved.png";
 
 export const PharmaHeroSection = () => {
   const handleCTAClick = () => {
@@ -18,11 +18,11 @@ export const PharmaHeroSection = () => {
       <div className="absolute inset-0 bg-pharma-black opacity-10"></div>
       
       {/* Logo positioned in top-right */}
-      <div className="absolute top-6 right-6 z-20">
+      <div className="absolute top-6 right-6 z-20 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg">
         <img 
           src={maisentregasLogo} 
           alt="MaisEntregas" 
-          className="h-12 md:h-16"
+          className="h-8 md:h-12 w-auto"
         />
       </div>
 
@@ -99,9 +99,9 @@ export const PharmaHeroSection = () => {
           <div className="relative">
             <div className="relative z-10">
               <img 
-                src={pharmaAppMockup} 
-                alt="App de gestão de entregas farmacêuticas" 
-                className="w-full max-w-md mx-auto rounded-2xl shadow-hero"
+                src={pharmaManagerImage} 
+                alt="Gestora de farmácia utilizando sistema de entrega" 
+                className="w-full max-w-md mx-auto rounded-2xl shadow-hero object-cover aspect-square"
               />
             </div>
             {/* Decorative gradient overlay */}

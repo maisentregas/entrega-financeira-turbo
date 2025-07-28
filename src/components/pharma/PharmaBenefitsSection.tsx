@@ -12,6 +12,8 @@ import {
   Smartphone,
   FileText
 } from "lucide-react";
+import teamOperationsImage from "@/assets/team-operations.jpg";
+import techDashboardImage from "@/assets/tech-dashboard.jpg";
 
 export const PharmaBenefitsSection = () => {
   const pharmacyBenefits = [
@@ -144,6 +146,30 @@ export const PharmaBenefitsSection = () => {
                   </div>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+        
+        {/* Imagens ilustrativas */}
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+          <div className="relative">
+            <img 
+              src={teamOperationsImage} 
+              alt="Equipe trabalhando em operações de entrega" 
+              className="w-full h-64 object-cover rounded-2xl shadow-card"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-pharma-black/40 to-transparent rounded-2xl flex items-end p-6">
+              <p className="text-white font-semibold">Equipe focada em resultados</p>
+            </div>
+          </div>
+          <div className="relative">
+            <img 
+              src={techDashboardImage} 
+              alt="Dashboard de tecnologia para gestão" 
+              className="w-full h-64 object-cover rounded-2xl shadow-card"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-pharma-green/40 to-transparent rounded-2xl flex items-end p-6">
+              <p className="text-white font-semibold">Tecnologia que funciona</p>
             </div>
           </div>
         </div>

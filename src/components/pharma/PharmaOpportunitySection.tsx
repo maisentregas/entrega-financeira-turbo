@@ -1,12 +1,14 @@
 import React from "react";
 import { TrendingUp, Target, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import deliveryTrackingImage from "@/assets/delivery-tracking.jpg";
 
 export const PharmaOpportunitySection = () => {
   return (
     <section className="py-20 bg-pharma-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          <div className="space-y-8 text-center lg:text-left">
           <div className="space-y-6">
             <div className="inline-flex items-center space-x-2 bg-pharma-green-light px-4 py-2 rounded-full">
               <TrendingUp className="h-5 w-5 text-pharma-green" />
@@ -73,6 +75,18 @@ export const PharmaOpportunitySection = () => {
             </Card>
           </div>
         </div>
+        
+        <div className="lg:order-first">
+          <div className="relative">
+            <img 
+              src={deliveryTrackingImage} 
+              alt="Profissional acompanhando entregas em tempo real" 
+              className="w-full rounded-2xl shadow-card object-cover aspect-square"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-pharma-green/20 to-transparent rounded-2xl"></div>
+          </div>
+        </div>
+      </div>
       </div>
     </section>
   );

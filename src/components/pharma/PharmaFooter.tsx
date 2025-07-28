@@ -1,7 +1,7 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Linkedin, Instagram } from "lucide-react";
-import maisentregasLogo from "@/assets/maisentregas-gradient-logo.png";
+import maisentregasLogo from "@/assets/maisentregas-logo-improved.png";
 
 export const PharmaFooter = () => {
   return (
@@ -12,11 +12,13 @@ export const PharmaFooter = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Logo and description */}
             <div className="md:col-span-2 space-y-4">
-              <img 
-                src={maisentregasLogo} 
-                alt="MaisEntregas" 
-                className="h-12"
-              />
+              <div className="bg-white rounded-lg p-3 inline-block">
+                <img 
+                  src={maisentregasLogo} 
+                  alt="MaisEntregas" 
+                  className="h-10 w-auto"
+                />
+              </div>
               <p className="text-white/80 text-sm leading-relaxed max-w-md">
                 Plataforma completa de gestão de entregas para farmácias. 
                 Automatize seu delivery e transforme sua operação logística.
