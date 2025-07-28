@@ -31,8 +31,8 @@ export const PharmaHeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                O Delivery da sua 
-                <span className="text-pharma-white"> Farmácia</span>
+                O Delivery da sua Farmácia está crescendo - e pode crescer 
+                <span className="text-pharma-white"> muito mais!</span>
               </h1>
               <p className="text-xl md:text-2xl text-pharma-white/90 leading-relaxed">
                 Mas gerenciar as entregas e entregadores ainda é uma dor de cabeça?
