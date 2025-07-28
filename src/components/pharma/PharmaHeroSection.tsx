@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp, MapPin } from "lucide-react";
-import pharmaAppMockup from "@/assets/pharma-app-mockup.jpg";
+const pharmaAppMockup = "/lovable-uploads/71db0933-2c8d-4e5d-baf1-fd5144505f24.png";
 import maisentregasLogo from "@/assets/maisentregas-logo.png";
 
 export const PharmaHeroSection = () => {
