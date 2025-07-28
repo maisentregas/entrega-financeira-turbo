@@ -22,7 +22,7 @@ export const PharmaHeroSection = () => {
         <img 
           src={maisentregasLogo} 
           alt="MaisEntregas" 
-          className="h-12 md:h-16"
+          className="h-12 md:h-16 brightness-0 invert"
         />
       </div>
 

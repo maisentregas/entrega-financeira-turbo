@@ -15,7 +15,7 @@ export const PharmaFooter = () => {
               <img 
                 src={maisentregasLogo} 
                 alt="MaisEntregas" 
-                className="h-12 bg-white p-2 rounded"
+                className="h-12 brightness-0 invert"
               />
               <p className="text-white/80 text-sm leading-relaxed max-w-md">
                 Plataforma completa de gestão de entregas para farmácias. 
