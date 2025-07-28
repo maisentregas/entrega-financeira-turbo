@@ -13,7 +13,7 @@ export const PharmaHeroSection = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-pharma-green to-pharma-green-dark text-white py-20 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-cyan-500 to-teal-600 text-white py-20 md:py-32 overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-pharma-black opacity-10"></div>
       
