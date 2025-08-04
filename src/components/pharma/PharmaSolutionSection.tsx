@@ -106,7 +106,7 @@ export const PharmaSolutionSection = () => {
             
             <div className="relative max-w-2xl mx-auto">
               <img 
-                src="/lovable-uploads/94ef2975-a659-42c4-915a-3f0b50f51adb.png" 
+                src="/lovable-uploads/devices-platform-hq.png" 
                 alt="Plataforma MaisEntregas em múltiplos dispositivos - laptop, celular e tablet mostrando mapa de entregas em tempo real"
                 className="w-full h-auto rounded-2xl shadow-2xl object-contain"
               />
