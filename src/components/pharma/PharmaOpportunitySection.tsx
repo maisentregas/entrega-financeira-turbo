@@ -2,10 +2,8 @@ import React from "react";
 import { TrendingUp, Target, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import pharmacyTrackingImage from "@/assets/pharmacy-management-tracking.jpg";
-
 export const PharmaOpportunitySection = () => {
-  return (
-    <section className="py-20 bg-pharma-white">
+  return <section className="py-20 bg-pharma-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           <div className="space-y-8 text-center lg:text-left">
@@ -52,7 +50,7 @@ export const PharmaOpportunitySection = () => {
                   <Target className="h-6 w-6 text-pharma-green" />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-bold text-pharma-black mb-2">Diferenciação Competitiva</h3>
+                  <h3 className="font-bold text-pharma-black mb-2">Diferenciação Competitiva, com Tecnologia</h3>
                   <p className="text-pharma-black/70 text-sm">
                     Serviço rápido e confiável fideliza clientes
                   </p>
@@ -67,9 +65,7 @@ export const PharmaOpportunitySection = () => {
                 </div>
                 <div className="text-center">
                   <h3 className="font-bold text-pharma-black mb-2">Margem de Lucro</h3>
-                  <p className="text-pharma-black/70 text-sm">
-                    Otimização de rotas reduz custos operacionais
-                  </p>
+                  <p className="text-pharma-black/70 text-sm">Otimização de rotas e automação de processos reduzem custos operacionais</p>
                 </div>
               </div>
             </Card>
@@ -78,16 +74,11 @@ export const PharmaOpportunitySection = () => {
         
         <div className="lg:order-first">
           <div className="relative">
-            <img 
-              src={pharmacyTrackingImage} 
-              alt="Gestora de farmácia acompanhando entregas em tempo real" 
-              className="w-full rounded-2xl shadow-card object-cover aspect-square"
-            />
+            <img src={pharmacyTrackingImage} alt="Gestora de farmácia acompanhando entregas em tempo real" className="w-full rounded-2xl shadow-card object-cover aspect-square" />
             <div className="absolute inset-0 bg-gradient-to-t from-pharma-green/20 to-transparent rounded-2xl"></div>
           </div>
         </div>
       </div>
       </div>
-    </section>
-  );
+    </section>;
 };

@@ -4,26 +4,19 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Clock, TrendingUp, MapPin } from "lucide-react";
 const pharmaAppMockup = "/lovable-uploads/71db0933-2c8d-4e5d-baf1-fd5144505f24.png";
 import maisentregasLogo from "@/assets/maisentregas-logo.png";
-
 export const PharmaHeroSection = () => {
   const handleCTAClick = () => {
-    document.getElementById("pharma-final-cta")?.scrollIntoView({ 
-      behavior: "smooth" 
+    document.getElementById("pharma-final-cta")?.scrollIntoView({
+      behavior: "smooth"
     });
   };
-
-  return (
-    <section className="relative bg-gradient-to-br from-cyan-500 to-teal-600 text-white py-20 md:py-32 overflow-hidden">
+  return <section className="relative bg-gradient-to-br from-cyan-500 to-teal-600 text-white py-20 md:py-32 overflow-hidden">
       {/* Background overlay */}
       <div className="absolute inset-0 bg-pharma-black opacity-10"></div>
       
       {/* Logo positioned in top-right */}
       <div className="absolute top-6 right-6 z-20">
-        <img 
-          src={maisentregasLogo} 
-          alt="MaisEntregas" 
-          className="h-12 md:h-16 brightness-0 invert"
-        />
+        <img src={maisentregasLogo} alt="MaisEntregas" className="h-12 md:h-16 brightness-0 invert" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -56,18 +49,14 @@ export const PharmaHeroSection = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <ArrowRight className="h-5 w-5 text-pharma-white" />
-                    <span>Experiência impecável para o cliente, com status automáticos pelo WhatsApp</span>
+                    <span>Experiência impecável para o cliente, com status automáticos, em tempo real, pelo WhatsApp</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                onClick={handleCTAClick}
-                size="lg" 
-                className="bg-pharma-white text-pharma-green hover:bg-pharma-white/90 font-semibold text-lg px-8 py-6 h-auto shadow-hero"
-              >
+              <Button onClick={handleCTAClick} size="lg" className="bg-pharma-white text-pharma-green hover:bg-pharma-white/90 font-semibold text-lg px-8 py-6 h-auto shadow-hero">
                 Quero modernizar meu delivery agora
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -79,7 +68,7 @@ export const PharmaHeroSection = () => {
                 <div className="flex items-center space-x-3">
                   <Clock className="h-8 w-8 text-pharma-white" />
                   <div>
-                    <div className="text-2xl font-bold text-pharma-white">60%</div>
+                    <div className="text-2xl font-bold text-pharma-white">50%</div>
                     <div className="text-sm text-pharma-white/80">Redução no tempo de entrega</div>
                   </div>
                 </div>
@@ -88,7 +77,7 @@ export const PharmaHeroSection = () => {
                 <div className="flex items-center space-x-3">
                   <TrendingUp className="h-8 w-8 text-pharma-white" />
                   <div>
-                    <div className="text-2xl font-bold text-pharma-white">85%</div>
+                    <div className="text-2xl font-bold text-pharma-white">95%</div>
                     <div className="text-sm text-pharma-white/80">Redução de erros operacionais</div>
                   </div>
                 </div>
@@ -98,17 +87,12 @@ export const PharmaHeroSection = () => {
 
           <div className="relative">
             <div className="relative z-10">
-              <img 
-                src={pharmaAppMockup} 
-                alt="App de gestão de entregas farmacêuticas" 
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-hero"
-              />
+              <img src={pharmaAppMockup} alt="App de gestão de entregas farmacêuticas" className="w-full max-w-lg mx-auto rounded-2xl shadow-hero" />
             </div>
             {/* Decorative gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-pharma-green-dark/20 to-transparent rounded-2xl"></div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
