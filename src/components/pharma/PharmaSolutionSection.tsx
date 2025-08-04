@@ -21,14 +21,14 @@ export const PharmaSolutionSection = () => {
     {
       icon: MapPin,
       title: "Rastreamento e visibilidade total",
-      description: "Status atualizado em tempo real dos entregadores e previsão de chegada de cada entrega no painel e no app",
+      description: "Status atualizado em tempo real dos entregadores e previsão de chegada de cada entrega no mapa, no painel e no app",
       color: "text-blue-600",
       bgColor: "bg-blue-50"
     },
     {
       icon: DollarSign,
       title: "Controle financeiro automatizado",
-      description: "Comissão calculada automaticamente + extrato para o entregador",
+      description: "Comissão calculada automaticamente + lançamento no extrato do entregador no app. Entregador pode solicitar pagamento direto no app",
       color: "text-green-600",
       bgColor: "bg-green-50"
     },
