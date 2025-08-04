@@ -35,7 +35,7 @@ export const PharmaSolutionSection = () => {
     {
       icon: CreditCard,
       title: "Pagamento simplificado com maquininha inteligente",
-      description: "Entregador cobra no local e não precisa voltar para devolver a máquina",
+      description: "Entregador cobra no local e não precisa voltar para devolver a máquina, sem precisar digitar nada na maquininha",
       color: "text-purple-600",
       bgColor: "bg-purple-50"
     },
