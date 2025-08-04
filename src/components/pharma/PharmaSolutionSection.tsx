@@ -104,7 +104,7 @@ export const PharmaSolutionSection = () => {
               </p>
             </div>
             
-            <div className="relative">
+            <div className="relative max-w-4xl mx-auto">
               <img 
                 src="/lovable-uploads/94ef2975-a659-42c4-915a-3f0b50f51adb.png" 
                 alt="Plataforma MaisEntregas em múltiplos dispositivos - laptop, celular e tablet mostrando mapa de entregas em tempo real"
