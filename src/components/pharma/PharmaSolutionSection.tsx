@@ -92,6 +92,31 @@ export const PharmaSolutionSection = () => {
           ))}
         </div>
 
+        {/* Visual demonstration with uploaded image */}
+        <div className="mt-20 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-pharma-black mb-4">
+                Plataforma completa em <span className="text-pharma-green">múltiplos dispositivos</span>
+              </h3>
+              <p className="text-lg text-pharma-black/70 max-w-2xl mx-auto">
+                Gerencie todas as entregas em tempo real através do painel web, aplicativo móvel e tablet
+              </p>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/94ef2975-a659-42c4-915a-3f0b50f51adb.png" 
+                alt="Plataforma MaisEntregas em múltiplos dispositivos - laptop, celular e tablet mostrando mapa de entregas em tempo real"
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+              
+              {/* Overlay with key features */}
+              <div className="absolute inset-0 bg-gradient-to-t from-pharma-black/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-16 text-center">
           <Card className="p-8 bg-pharma-green-light border-pharma-green/30 max-w-4xl mx-auto">
             <div className="space-y-4">
