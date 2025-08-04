@@ -5,7 +5,6 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Building2, Phone, User, Loader2, CheckCircle, Clock, TrendingUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { rdstationService } from "@/services/rdstation";
-
 export const PharmaFinalCTASection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,31 +13,28 @@ export const PharmaFinalCTASection = () => {
     whatsapp: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.company || !formData.whatsapp) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       const result = await rdstationService.submitLead(formData);
-      
       if (result.success) {
         toast({
           title: "Solicitação enviada com sucesso!",
-          description: "Nossa equipe entrará em contato em breve para apresentar a solução.",
+          description: "Nossa equipe entrará em contato em breve para apresentar a solução."
         });
-        
+
         // Reset form
         setFormData({
           name: "",
@@ -50,30 +46,30 @@ export const PharmaFinalCTASection = () => {
         toast({
           title: "Erro ao enviar solicitação",
           description: result.error || "Tente novamente em alguns instantes.",
-          variant: "destructive",
+          variant: "destructive"
         });
       }
     } catch (error) {
       toast({
         title: "Erro ao enviar solicitação",
         description: "Verifique sua conexão e tente novamente.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
-  return (
-    <section id="pharma-final-cta" className="py-20 bg-gradient-to-br from-pharma-green to-pharma-green-dark text-white">
+  return <section id="pharma-final-cta" className="py-20 bg-gradient-to-br from-pharma-green to-pharma-green-dark text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
@@ -103,72 +99,32 @@ export const PharmaFinalCTASection = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Seu nome completo" 
-                      value={formData.name} 
-                      onChange={handleInputChange} 
-                      required 
-                      className="pl-10 h-12" 
-                    />
+                    <Input type="text" name="name" placeholder="Seu nome completo" value={formData.name} onChange={handleInputChange} required className="pl-10 h-12" />
                   </div>
                   
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Seu melhor e-mail" 
-                      value={formData.email} 
-                      onChange={handleInputChange} 
-                      required 
-                      className="pl-10 h-12" 
-                    />
+                    <Input type="email" name="email" placeholder="Seu melhor e-mail" value={formData.email} onChange={handleInputChange} required className="pl-10 h-12" />
                   </div>
                   
                   <div className="relative">
                     <Building2 className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      type="text" 
-                      name="company" 
-                      placeholder="Nome da sua farmácia" 
-                      value={formData.company} 
-                      onChange={handleInputChange} 
-                      required 
-                      className="pl-10 h-12" 
-                    />
+                    <Input type="text" name="company" placeholder="Nome da sua farmácia" value={formData.company} onChange={handleInputChange} required className="pl-10 h-12" />
                   </div>
                   
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    <Input 
-                      type="tel" 
-                      name="whatsapp" 
-                      placeholder="WhatsApp para contato" 
-                      value={formData.whatsapp} 
-                      onChange={handleInputChange} 
-                      required 
-                      className="pl-10 h-12" 
-                    />
+                    <Input type="tel" name="whatsapp" placeholder="WhatsApp para contato" value={formData.whatsapp} onChange={handleInputChange} required className="pl-10 h-12" />
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting} 
-                    className="w-full bg-pharma-green hover:bg-pharma-green-dark text-white font-semibold h-12"
-                  >
-                    {isSubmitting ? (
-                      <>
+                  <Button type="submit" disabled={isSubmitting} className="w-full bg-pharma-green hover:bg-pharma-green-dark text-white font-semibold h-12">
+                    {isSubmitting ? <>
                         <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                         Enviando...
-                      </>
-                    ) : (
-                      <>
+                      </> : <>
                         Quero automatizar meu delivery
                         <ArrowRight className="ml-2 h-5 w-5" />
-                      </>
-                    )}
+                      </>}
                   </Button>
                 </form>
               </div>
@@ -186,7 +142,7 @@ export const PharmaFinalCTASection = () => {
                     <div className="flex items-center space-x-3">
                       <Building2 className="h-8 w-8 text-white" />
                       <div>
-                        <div className="text-2xl font-bold text-white">150+</div>
+                        <div className="text-2xl font-bold text-white">100+</div>
                         <div className="text-sm text-white/80">Farmácias servidas</div>
                       </div>
                     </div>
@@ -196,8 +152,8 @@ export const PharmaFinalCTASection = () => {
                     <div className="flex items-center space-x-3">
                       <Clock className="h-8 w-8 text-white" />
                       <div>
-                        <div className="text-2xl font-bold text-white">60%</div>
-                        <div className="text-sm text-white/80">Redução no tempo</div>
+                        <div className="text-2xl font-bold text-white">50%</div>
+                        <div className="text-sm text-white/80">Redução no tempo de entrega</div>
                       </div>
                     </div>
                   </Card>
@@ -206,7 +162,7 @@ export const PharmaFinalCTASection = () => {
                     <div className="flex items-center space-x-3">
                       <TrendingUp className="h-8 w-8 text-white" />
                       <div>
-                        <div className="text-2xl font-bold text-white">85%</div>
+                        <div className="text-2xl font-bold text-white">95%</div>
                         <div className="text-sm text-white/80">Menos erros</div>
                       </div>
                     </div>
@@ -249,6 +205,5 @@ export const PharmaFinalCTASection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
