@@ -1,6 +1,6 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin, Instagram, Youtube } from "lucide-react";
 import maisentregasLogo from "@/assets/maisentregas-logo.png";
 
 export const PharmaFooter = () => {
@@ -27,6 +27,9 @@ export const PharmaFooter = () => {
             <div className="space-y-4">
               <h3 className="font-semibold text-white">Links Úteis</h3>
               <div className="space-y-2">
+                <a href="https://www.maisentregas.com" target="_blank" rel="noopener noreferrer" className="block text-white/70 hover:text-pharma-green transition-colors text-sm">
+                  Site MaisEntregas
+                </a>
                 <a href="#" className="block text-white/70 hover:text-pharma-green transition-colors text-sm">
                   Política de Privacidade
                 </a>
@@ -44,18 +47,31 @@ export const PharmaFooter = () => {
               <h3 className="font-semibold text-white">Redes Sociais</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/company/maisentregas/?viewAsMember=true" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pharma-green transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.instagram.com/maisentregascom/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pharma-green transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://www.youtube.com/channel/UCJdJLZBg5Iv044m5Du3uHkg" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-pharma-green transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>
